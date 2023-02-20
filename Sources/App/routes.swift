@@ -10,5 +10,9 @@ func routes(_ app: Application) throws {
         return(String(a))
     }
     
+    app.get("hello", ":name") { req -> String in
+        guard let name = req.parameters.get("name") else {return "error"}
+        return "Hello, \(name)!"
+    }
 
 }
