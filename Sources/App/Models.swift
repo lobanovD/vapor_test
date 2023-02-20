@@ -8,6 +8,6 @@
 import Foundation
 import Vapor
 
-struct Greeting: Content {
-    var hello: String
+struct Hello: Content {
+    var name: String?
 }
