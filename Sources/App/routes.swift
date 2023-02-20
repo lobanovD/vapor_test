@@ -5,13 +5,10 @@ func routes(_ app: Application) throws {
         "It works!"
     }
 
-    app.get("hello") { req async -> String in
-        "Hello, world!"
+    app.get("add") { req async -> String in
+        let a = 5+5
+        return(String(a))
     }
     
-    app.post("greeting") { req in
-        let greeting = try req.content.decode(Greeting.self)
-        print(greeting.hello) // "world"
-        return HTTPStatus.ok
-    }
+
 }
